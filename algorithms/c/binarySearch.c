@@ -38,19 +38,18 @@ binarySearchIter(int *arr, int ubound, int val)
  *  @return int:   The position of the value specified.
  */
 int
-binarySearchRecur(int *arr, int ubound, int val)
+binarySearchRecur(int *arr, int lbound, int ubound, int val)
 {
-  int lbound = 0;
   int midp = (ubound + lbound) / 2;
 
   if (arr[midp] == val) return midp + 1;
 
   // if value is smaller than the one at mid, go left.
   // we check up until (size-1) because the actual midpoint value was already checked in the previous if statement.
-  if (arr[midp] > val) return (arr, lbound, midp - 1, val);
+  if (arr[midp] > val) return binarySearchRecur(arr, lbound, midp - 1, val);
 
   // if the value is bigger than the one at mid, go right
-  return (arr, midp + 1, ubound, val);
+  return binarySearchRecur(arr, midp + 1, ubound, val);
 }
 
 
@@ -69,7 +68,7 @@ main(int argc, char *argv[])
   scanf("%d", &valToFind);
 
   // int position = binarySearchIter(arr, n, valToFind);
-  int position = binarySearchRecur(arr, n, valToFind);
+  int position = binarySearchRecur(arr, 0, n, valToFind);
 
   printf("The position is: %i\n", position);
 
