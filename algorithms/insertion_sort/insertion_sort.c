@@ -55,4 +55,6 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < n; i++) {
         printf("%d,\t", arr[i]);
     }
+    free(arr);
+    return 0;
 }
