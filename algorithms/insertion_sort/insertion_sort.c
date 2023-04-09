@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
 
     insertion_sort(arr, n);
     // Uncomment the following line for the recursive version of this algorithm
-    // insertion_sort_recursive
+    // insertion_sort_recursive(arr, n);
 
     printf("\nNew array:\n");
     for (int i = 0; i < n; i++) {
