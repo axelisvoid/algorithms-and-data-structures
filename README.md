@@ -1,3 +1,4 @@
 # Algorithms and Data Structures
 
-Implementations of some simple algorithms and data structures in C.
+Implementations of some algorithms and data structures in C and Python.
+I will implement as much algorithms as I can.
