@@ -37,9 +37,9 @@ int main(int argc, char *argv[]) {
     int n = argc - 1;
     int *arr = malloc(n * sizeof(int));
 
-    for (int i = 1; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         char *endPtr;
-        arr[i - 1] = strtol(argv[i], &endPtr, 10);
+        arr[i] = strtol(argv[i + 1], &endPtr, 10);
     }
 
     printf("Original array:\n");
@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
     // Uncomment the following line for the recursive version of this algorithm
     // insertion_sort_recursive
 
-    printf("New array:\n");
+    printf("\nNew array:\n");
     for (int i = 0; i < n; i++) {
         printf("%d,\t", arr[i]);
     }
