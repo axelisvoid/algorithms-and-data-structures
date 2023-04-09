@@ -4,7 +4,6 @@
 
 int binary_search(int *arr, int ubound, int val) {
     int lbound = 0;
-
     while (lbound >= 0 && lbound <= ubound) {
         int midpoint = (lbound + ubound) / 2;
 
