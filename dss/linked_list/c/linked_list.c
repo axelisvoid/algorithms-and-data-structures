@@ -23,6 +23,23 @@ node* new_linked_list(const int *keys, size_t size) {
     return list;
 }
 
+// node* insert_at(node *list, int index, int key) {
+//     return NULL;
+// }
+
+node* insert_first(node *list, int key) {
+    if (list == NULL) {
+        int keys[1] = {key};
+        list = new_linked_list(keys, (size_t)1);
+        return list;
+    }
+    node *new_node = malloc(sizeof(node));
+    new_node->key = key;
+    new_node->next=list;
+
+    return new_node;
+}
+
 node* insert_last(node *list, int key) {
     if (list == NULL) {
         return NULL;
@@ -35,19 +52,6 @@ node* insert_last(node *list, int key) {
     new_node->key = key;
     new_node->next = NULL;
     current_node->next = new_node;
-    return new_node;
-}
-
-node* insert_first(node *list, int key) {
-    if (list == NULL) {
-        int keys[1] = {key};
-        list = new_linked_list(keys, (size_t)1);
-        return list;
-    }
-    node *new_node = malloc(sizeof(node));
-    new_node->key = key;
-    new_node->next=list;
-
     return new_node;
 }
 
@@ -79,7 +83,7 @@ void delete_node(node *list, int key) {
 void print_keys(node *list) {
     node *ptr = list;
     while (ptr != NULL) {
-        printf("%d\t", ptr->key);
+        printf("%d->", ptr->key);
         ptr = ptr->next;
     }
 }
